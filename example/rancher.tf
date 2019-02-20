@@ -1,6 +1,5 @@
 module "rancher" {
   source                = "devoption/rancher/aws"
-  version               = "0.2.0"
 
   name                  = "rancher"
 

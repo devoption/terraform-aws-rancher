@@ -7,7 +7,6 @@ This module will launch Rancher 2.0 in AWS Fargate.
 ```
 module "rancher" {
   source  = "devoption/rancher/aws"
-  version = "0.2.0"
 
   # Set the name
   name                  = "rancher"
