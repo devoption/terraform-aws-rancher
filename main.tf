@@ -2,7 +2,7 @@ locals {
   vpc_id             = "${var.vpc_id == "" ? module.vpc.vpc_id : var.vpc_id}"
   private_subnet_ids = "${coalescelist(module.vpc.private_subnets, var.private_subnet_ids)}"
   public_subnet_ids  = "${coalescelist(module.vpc.public_subnets, var.public_subnet_ids)}"
-  rancher_image      = "${var.rancher_image == '' ? 'rancher/server:${var.rancher_version}' : '${var.rancher_image}' }"
+  rancher_image      = "${var.rancher_image == '' ? 'rancher/rancher:${var.rancher_version}' : '${var.rancher_image}' }"
   rancher_url        = "https://${coalesce(element(concat(aws_route53_record.rancher.*.fqdn, list("")), 0), module.alb.dns_name)}"
   rancher_url_events = "${local.rancher_url}/events"
 
